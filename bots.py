@@ -23,8 +23,6 @@ import copy
 import sys
 from sys import maxsize as inf
 
-import MCTS
-
 # Custom Environment using provided functions to build a OpenAI Gym Env
 class GoT(gym.Env):
 

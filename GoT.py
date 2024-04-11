@@ -57,7 +57,7 @@ class GoT(gym.Env):
     observation_space = gym.spaces.Box(low=1, high=9, shape=(13, 13), dtype=np.float32)
     action_space = gym.spaces.Discrete(4)
 
-    game = GoTProblem("/Users/benbradley/CS Classwork/CS1410/final-project-bpbradle copy/final-project/maps/small_room.txt", 0, message_print=False) 
+    game = GoTProblem("maps/small_room.txt", 0, message_print=False) 
     internal_board = game._start_state  
     external_board = None
     currentplayer = 0 
@@ -81,13 +81,13 @@ class GoT(gym.Env):
         self.external_board = num_arr
     
     def reset(self, seed=None, options=None):
-        map_string = "/Users/benbradley/CS Classwork/CS1410/final-project-bpbradle copy/final-project/maps/small_room.txt"
+        map_string = "maps/small_room.txt"
         self.game = GoTProblem(map_string, 0, message_print=False) 
         self.internal_board = self.game._start_state
         self.convert_to_floats()
         self.currentplayer = 0
         self.tmp_rounds = 0
-        return self.external_board, {}
+        return self.external_board
     
     # You have an unfinished board
       # Play action, if it's done return evaluate_state()

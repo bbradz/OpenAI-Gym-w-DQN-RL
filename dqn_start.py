@@ -10,6 +10,7 @@ def init_gym_env():
 
     env = GoT()
     state_space = env.reset()
+    print(state_space)
     state_space = [[int(x) for x in i] for i in state_space]
     state_space = tf.Tensor(state_space)
     state_raw = np.zeros(state_space.shape, dtype=int)
